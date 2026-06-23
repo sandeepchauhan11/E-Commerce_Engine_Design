@@ -1,0 +1,174 @@
+/* --- src/App.css --- */
+
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap');
+
+/* 1. Premium Color Palette & Variables */
+:root {
+  --primary-color: #0f172a; /* Sleek Noir */
+  --primary-hover: #334155;
+  --accent-color: #6366f1; /* Vibrant Indigo for buttons */
+  --accent-hover: #4f46e5;
+  --bg-color: #f8fafc;
+  --surface-color: #ffffff;
+  --text-main: #0f172a;
+  --text-muted: #64748b;
+  --border-color: #e2e8f0;
+  --radius: 12px; /* Softer, modern corners */
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+}
+
+/* 2. Global Reset & Typography */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-main);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* 3. Sleek Header (Glassmorphism effect) */
+.app-header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background-color: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(10px); /* Frosted glass effect */
+  border-bottom: 1px solid var(--border-color);
+  padding: 1rem 0;
+}
+
+.header-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.app-header h1 {
+  font-size: 1.5rem;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  color: var(--primary-color);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.header-tagline {
+  color: var(--text-muted);
+  font-weight: 600;
+  font-size: 0.875rem;
+  display: none; /* Hidden on mobile */
+}
+
+/* 4. Hero Banner with High-Quality Background Image */
+.hero-banner {
+  /* Using a stunning shopping interior from Unsplash */
+  background-image: url('https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&q=80&w=1920');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed; /* Parallax effect */
+  height: 60vh;
+  min-height: 400px;
+  margin-bottom: 3rem;
+  display: flex;
+  align-items: center;
+}
+
+.hero-overlay {
+  background: linear-gradient(to right, rgba(15, 23, 42, 0.9) 0%, rgba(15, 23, 42, 0.4) 100%);
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  padding: 0 5%;
+}
+
+.hero-content {
+  max-width: 600px;
+  color: white;
+  animation: fadeIn 1s ease-out;
+}
+
+.hero-content h2 {
+  font-size: 3.5rem;
+  font-weight: 800;
+  line-height: 1.1;
+  margin-bottom: 1rem;
+  letter-spacing: -0.03em;
+}
+
+.hero-content p {
+  font-size: 1.25rem;
+  color: #cbd5e1;
+  margin-bottom: 2rem;
+}
+
+.hero-btn {
+  display: inline-block;
+  background-color: var(--accent-color);
+  color: white;
+  padding: 1rem 2rem;
+  border-radius: 30px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 14px 0 rgba(99, 102, 241, 0.39);
+}
+
+.hero-btn:hover {
+  background-color: var(--accent-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(99, 102, 241, 0.4);
+}
+
+/* 5. Main App Container Grid */
+.app-container {
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 0 1.5rem 4rem 1.5rem;
+}
+
+.app-main {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  align-items: start;
+}
+
+.catalog-section {
+  width: 100%;
+}
+
+/* 6. Desktop Layout Adjustments */
+@media (min-width: 900px) {
+  .app-main {
+    grid-template-columns: 1fr 380px; 
+    gap: 3rem;
+  }
+  
+  .sidebar-section {
+    position: sticky;
+    top: 6rem; /* Stays fixed slightly below the glass header */
+  }
+
+  .header-tagline {
+    display: block;
+  }
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}

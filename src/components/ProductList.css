@@ -1,0 +1,30 @@
+/* Add to bottom of ProductList.css */
+.product-listing__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.category-filter label {
+  font-weight: 600;
+  margin-right: 0.5rem;
+  color: var(--text-muted);
+}
+
+.category-filter select {
+  padding: 0.5rem 1rem;
+  border-radius: var(--radius);
+  border: 1px solid var(--border-color);
+  background-color: var(--surface-color);
+  color: var(--text-main);
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.category-filter select:focus {
+  outline: 2px solid var(--primary-color);
+  border-color: transparent;
+}
