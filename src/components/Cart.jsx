@@ -1,6 +1,6 @@
 import React from 'react';
 import { useCart } from '../hooks/useCart';
-import './Cart.css'; // Your styling file
+import './Cart.css'; 
 
 const Cart = () => {
   const { cart, dispatch, cartTotal, CART_ACTIONS } = useCart();

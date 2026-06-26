@@ -15,12 +15,12 @@ const cartReducer = (state, action) => {
       const existingItemIndex = state.findIndex(item => item.id === action.payload.id);
       
       if (existingItemIndex > -1) {
-        // Item exists, create a new array and update the quantity immutably
+        
         const newState = [...state];
         newState[existingItemIndex].quantity += 1;
         return newState;
       }
-      // New item, add to array with quantity 1
+      
       return [...state, { ...action.payload, quantity: 1 }];
     }
 
@@ -28,7 +28,7 @@ const cartReducer = (state, action) => {
       return state.filter(item => item.id !== action.payload.id);
 
     case CART_ACTIONS.UPDATE_QUANTITY: {
-      if (action.payload.quantity < 1) return state; // Prevent negative quantities
+      if (action.payload.quantity < 1) return state; 
       
       return state.map(item =>
         item.id === action.payload.id
@@ -45,22 +45,22 @@ const cartReducer = (state, action) => {
   }
 };
 
-// 3. Create Context
+
 export const CartContext = createContext();
 
-// 4. Provider Component
+
 export const CartProvider = ({ children }) => {
-  // Lazy initialize state from localStorage
+  
   const initialState = JSON.parse(localStorage.getItem('ecommerce_cart')) || [];
   
   const [cart, dispatch] = useReducer(cartReducer, initialState);
 
-  // Sync cart to localStorage whenever it changes
+  
   useEffect(() => {
     localStorage.setItem('ecommerce_cart', JSON.stringify(cart));
   }, [cart]);
 
-  // Derived state (calculated on the fly)
+  
   const cartTotal = cart.reduce((total, item) => total + (item.price * item.quantity), 0);
   const itemCount = cart.reduce((count, item) => count + item.quantity, 0);
 

@@ -7,7 +7,7 @@ import './App.css';
 const App = () => {
   return (
     <CartProvider>
-      {/* 1. Sleek Navigation Bar */}
+      
       <header className="app-header">
         <div className="header-container">
           <h1><span className="brand-icon">🛍️</span> Elite Cart</h1>
@@ -15,7 +15,7 @@ const App = () => {
         </div>
       </header>
 
-      {/* 2. New Hero Banner with Background Image */}
+
       <section className="hero-banner">
         <div className="hero-overlay">
           <div className="hero-content">
@@ -26,7 +26,7 @@ const App = () => {
         </div>
       </section>
 
-      {/* 3. Main Content Area */}
+      
       <div className="app-container" id="shop">
         <main className="app-main">
           <div className="catalog-section">

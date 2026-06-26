@@ -45,10 +45,10 @@ const ProductList = () => {
     });
   };
 
-  // NEW: Dynamically generate categories from the API data
+  
   const categories = ['all', ...new Set(products.map(item => item.category))];
 
-  // NEW: Filter the products before we map over them
+  
   const filteredProducts = selectedCategory === 'all' 
     ? products 
     : products.filter(product => product.category === selectedCategory);
@@ -61,7 +61,7 @@ const ProductList = () => {
       <div className="product-listing__header">
         <h2>Featured Collection</h2>
         
-        {/* NEW: The Category Dropdown UI */}
+        
         <div className="category-filter">
           <label htmlFor="category-select">Filter by: </label>
           <select 

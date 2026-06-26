@@ -37,5 +37,4 @@ const ProductCard = ({ product, onAddToCart }) => {
   );
 };
 
-// THIS IS THE MAGIC LINE VITE IS LOOKING FOR:
 export default ProductCard;

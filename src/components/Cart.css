@@ -29,7 +29,7 @@
   gap: 1.5rem;
   margin-bottom: 2rem;
   max-height: 50vh;
-  overflow-y: auto; /* Adds a scrollbar if they add a ton of items */
+  overflow-y: auto; 
   padding-right: 0.5rem;
 }
 
@@ -100,7 +100,7 @@
 .cart-item__remove {
   background: none;
   border: none;
-  color: #ef4444; /* Red for destructive action */
+  color: #ef4444; 
   font-size: 0.75rem;
   cursor: pointer;
   text-decoration: underline;
